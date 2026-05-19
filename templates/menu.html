@@ -3,7 +3,11 @@
         <h1>Churros da Angélica</h1>
     </div>
     <div class="nav-items">
-        <a href="/">Home</a>
-        <a href="/vendas">Vendas</a>
+        <a href="/vendas" class="{{ 'active' if request.path == '/vendas' else ''}}">Vendas</a>
+        <a id="nav-home" class="{{ 'active' if request.path == '/' else ''}}" href="/">Home</a>
+        <a href="/pedidos" class="{{ 'active' if request.path == '/pedidos' else ''}}">Pedido</a>
+    </div>
+    <div id="whatsapp-menu">
+        <button>Whatsapp</button>
     </div>
 </nav>
