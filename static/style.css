@@ -149,10 +149,58 @@ nav a img {
   cursor: pointer;
 }
 
-/* Footer */
+/* SECTION 2 */
+
+.section-2 {
+    background-color: #eeeeee;
+    padding-top: 3%;
+    padding-bottom: 10%;
+}
+
+.section-2 h1 {
+    font-size: 350%;
+    color: rgb(85, 58, 44);
+    font-weight: bold;
+    margin-left: 11%;
+}
+
+.section-2 h2 {
+    font-size: 200%;
+    color: rgb(85, 58, 44);
+    font-weight: bold;
+}
+
+.section-2 p {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.section-2 h3 {
+    font-size: 150%;
+    color: rgb(253, 115, 129);
+    font-weight: bold;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+.card {
+    background-color: white;
+    border: 2px solid #aaaaaa;
+    border-radius: 2px;
+    padding: 1% 1%;
+}
 
 
-/* Animações */
+/* FOOTER */
+
+
+/* ANIMAÇÕES */
 
 @keyframes aparecer {
     from {
