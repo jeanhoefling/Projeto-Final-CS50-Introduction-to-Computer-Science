@@ -230,11 +230,9 @@ nav a img {
 
 .section-hidden {
     opacity: 0;
-    transform: translateY(50%);
-    transition: all 0.6s ease;
+    transition: all 0.4s ease;
 }
 
 .section-show {
     opacity: 1;
-    transform: translateY(0);
 }
