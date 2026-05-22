@@ -205,6 +205,58 @@ nav a img {
 
 /* FOOTER */
 
+footer {
+    padding-left: 4%;
+    padding-right: 5%;
+    padding-bottom: 1%;
+    display: flex;
+    background-color: rgb(65, 31, 11);
+    text-align: center;
+    justify-content: space-between;
+}
+
+footer div {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer > img {
+    width: 10%;
+}
+
+footer h1 {
+    color: white;
+    font-weight: bold;
+}
+
+footer a, footer p {
+    padding-top: 1vh;
+    color: #bbbbbb;
+}
+
+footer a:hover, footer p:hover {
+    cursor: pointer;
+    color: #eeeeee;
+    scale: 1.1;
+}
+
+#paginas-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+#contatos div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1vw;
+}
+
+#contatos img {
+    width: 2vw;
+}
+
 
 /* ANIMAÇÕES */
 

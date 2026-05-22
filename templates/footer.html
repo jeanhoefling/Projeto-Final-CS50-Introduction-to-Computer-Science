@@ -1,1 +1,18 @@
-<h1>footer</h1>
+<img src="{{  url_for('static', filename='assets/logo.png')  }}">
+<div id="endereco">
+    <h1>Endereço:</h1>
+    <p>Rua Geraldo dos Santos, n°259. Júlio de Castilhos - RS</p>
+</div>
+<div id="paginas-footer">
+    <h1>Páginas:</h1>
+    <a href="/">Home</a>
+    <a href="/vendas">Vendas</a>
+    <a href="/pedidos">Pedido</a>
+</div>
+<div id="contatos">
+    <h1>Contatos</h1>
+    <div>
+        <a href="https://wa.me/55997009084" target="_blank"><img src="{{ url_for('static', filename='assets/whatsapp.png') }}"></a>
+        <a href="https://www.instagram.com/angelica.cancian/" target="_blank"><img src="{{ url_for('static', filename='assets/instagram.png') }}"></a>
+    </div>
+</div>
