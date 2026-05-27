@@ -33,8 +33,14 @@ def vendas():
 @app.route("/pedidos", methods=["GET", "POST"])
 def pedidos():
     if request.method == "POST":
+
         nome = request.form["nome"]
-        whatsapp = request.form["whatsapp"]
+        if not nome.strip():
+            return "Nome é obrigatório", 400
+        
+        whatsapp = request.form["whatsapp"].strip()
+        if whatsapp and (len(whatsapp) != 11 or not whatsapp.isdigit()):
+            return "Formato de whatsapp inválido", 400
         observacao = request.form["observacao"]
 
         produtos = {}
