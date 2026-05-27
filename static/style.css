@@ -259,51 +259,51 @@ footer a:hover, footer p:hover {
 
 /* PEDIDOS */
 
-#pedidos-page {
+#inserir-pedido-page {
     padding: 2vh 2% 2vh 2%;
     background-color: #eeeeee;
 }
 
-#pedidos-page h1 {
+#inserir-pedido-page h1 {
     font-size: 300%;
     color: rgb(85, 58, 44);
     font-weight: bold;
 }
 
-#pedidos-page h2 {
+#inserir-pedido-page h2 {
     font-size: 150%;
     color: rgb(85, 58, 44);
     margin-top: 1vh;
 }
 
-#pedidos-page h3 {
+#inserir-pedido-page h3 {
     font-size: 180%;
     color: rgb(85, 58, 44);
     margin-top: 1vh;
     font-weight: bold;
 }
 
-#pedidos-page h4 {
+#inserir-pedido-page h4 {
     font-size: 120%;
     color: rgb(85, 58, 44);
     margin-top: 2vh;
     font-weight: bold;
 }
 
-#pedidos-page input {
+#inserir-pedido-page input {
     width: 95%;
     padding: 1vh 1% 1vh 1%;
     margin-top: 0.5vh;
     border-radius: 2px;
 }
 
-#pedidos-page form {
+#inserir-pedido-page form {
     gap: 2%;
     display: flex;
     margin-top: 2vh;
 }
 
-#pedidos-page #itens-head {
+#inserir-pedido-page #itens-head {
     display: flex;
     padding: 0vh 1% 1vh 1%;
     background-color: #eeeeee;
@@ -312,34 +312,34 @@ footer a:hover, footer p:hover {
     border-top-right-radius: 2px;
 }
 
-#pedidos-page #itens-head h4:nth-child(1) {
+#inserir-pedido-page #itens-head h4:nth-child(1) {
     width: 30%;
 }
 
-#pedidos-page #itens-head h4:nth-child(2) {
+#inserir-pedido-page #itens-head h4:nth-child(2) {
     width: 25%;
 }
 
-#pedidos-page #itens-head h4:nth-child(3) {
+#inserir-pedido-page #itens-head h4:nth-child(3) {
     width: 25%;
 }
 
-#pedidos-page #itens-head h4:nth-child(4) {
+#inserir-pedido-page #itens-head h4:nth-child(4) {
     width: fit-content;
 }
 
-#pedidos-page #itens-head h4:nth-child(5) {
+#inserir-pedido-page #itens-head h4:nth-child(5) {
     flex: 1;
     text-align: right;
 }
 
-#pedidos-page .itens-row {
+#inserir-pedido-page .itens-row {
     display: flex;
     padding: 1vh 1% 1vh 1%;
     border: 1px solid #cccccc;
 }
 
-#pedidos-page #dados-cliente {
+#inserir-pedido-page #dados-cliente {
     width: 30%;
     padding: 2vh 1% 2vh 1%;
     background-color: #ffffff;
@@ -347,7 +347,7 @@ footer a:hover, footer p:hover {
     border-radius: 3px;
 }
 
-#pedidos-page #dados-pedido {
+#inserir-pedido-page #dados-pedido {
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -357,61 +357,61 @@ footer a:hover, footer p:hover {
     border-radius: 3px;
 }
 
-#pedidos-page #observacao {
+#inserir-pedido-page #observacao {
     padding-bottom: 15vh;
 }
 
-#pedidos-page .div-quantidade {
+#inserir-pedido-page .div-quantidade {
     display: flex;
     width: 10%;
     gap: 0px;
     margin-right: 15%;
 }
 
-#pedidos-page .div-quantidade button {
+#inserir-pedido-page .div-quantidade button {
     width: 15vh;
 }
 
-#pedidos-page .div-quantidade input {
+#inserir-pedido-page .div-quantidade input {
     width: 5vh;
 }
 
-#pedidos-page .itens-row select {
+#inserir-pedido-page .itens-row select {
     cursor: pointer;
     margin-right: 10%;
     width: 20%;
 }
 
-#pedidos-page .itens-row p:nth-of-type(1) {
+#inserir-pedido-page .itens-row p:nth-of-type(1) {
     width: 25%;
 }
 
-#pedidos-page .itens-row p:nth-of-type(2) {
+#inserir-pedido-page .itens-row p:nth-of-type(2) {
     width: fit-content;
 }
 
-#pedidos-page .itens-row a {
+#inserir-pedido-page .itens-row a {
     flex: 1;
     text-align: right;
 }
 
-#pedidos-page .itens-row img {
+#inserir-pedido-page .itens-row img {
     width: 15%;
     height: 3vh;
 }
 
-#pedidos-page .itens-row img:hover {
+#inserir-pedido-page .itens-row img:hover {
     scale: 1.05;
     cursor: pointer;
 }
 
-#pedidos-page #adicionar-total {
+#inserir-pedido-page #adicionar-total {
     margin-top: 2vh;
     display: flex;
     justify-content: space-between;
 }
 
-#pedidos-page #adicionar-total button {
+#inserir-pedido-page #adicionar-total button {
     height: 70%;
     padding: 1vh 4% 1vh 4%;
     border: 2px solid rgb(253, 115, 129);
@@ -420,14 +420,14 @@ footer a:hover, footer p:hover {
     background-color: white;
 }
 
-#pedidos-page #div-salvar-pedido {
+#inserir-pedido-page #div-salvar-pedido {
     margin-top: auto;
     display: flex;
     justify-content: flex-end;
     gap: 2%;
 }
 
-#pedidos-page #div-salvar-pedido button:nth-child(1) {
+#inserir-pedido-page #div-salvar-pedido button:nth-child(1) {
     padding: 2vh 10% 2vh 10%;
     background-color: #eeeeee;
     border: 2px solid #aaaaaa;
@@ -435,7 +435,7 @@ footer a:hover, footer p:hover {
     color: rgb(85, 58, 44);
 }
 
-#pedidos-page #div-salvar-pedido button:nth-child(2) {
+#inserir-pedido-page #div-salvar-pedido button:nth-child(2) {
     padding: 2vh 10% 2vh 10%;
     background-color: rgb(253, 115, 129);
     border: 2px solid rgb(253, 115, 129);
@@ -443,18 +443,18 @@ footer a:hover, footer p:hover {
     color: white;
 }
 
-#pedidos-page #dados-pedido button:hover {
+#inserir-pedido-page #dados-pedido button:hover {
     cursor: pointer;
     scale: 1.05;
 }  
 
-#pedidos-page input[type="number"]::-webkit-outer-spin-button, #pedidos-page 
+#inserir-pedido-page input[type="number"]::-webkit-outer-spin-button, #inserir-pedido-page 
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-#pedidos-page input[type="number"] {
+#inserir-pedido-page input[type="number"] {
     text-align: center;
     -moz-appearance: textfield;
     appearance: textfield;

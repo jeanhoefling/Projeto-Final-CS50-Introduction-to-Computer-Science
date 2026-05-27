@@ -29,9 +29,13 @@ def index():
 @app.route("/vendas")
 def vendas():
     return render_template("vendas.html")
-    
-@app.route("/pedidos", methods=["GET", "POST"])
+
+@app.route("/pedidos")
 def pedidos():
+    return render_template("pedidos.html")
+    
+@app.route("/inserir-pedido", methods=["GET", "POST"])
+def inserirPedido():
     if request.method == "POST":
 
         nome = request.form["nome"]
@@ -67,9 +71,9 @@ def pedidos():
                     )
         conn.commit()
 
-        return redirect("/pedidos")
+        return redirect("/inserir-pedido")
     else:
-        return render_template("pedidos.html")
+        return render_template("inserir-pedido.html")
     
 if __name__ == "__main__":
     app.run(debug=True)

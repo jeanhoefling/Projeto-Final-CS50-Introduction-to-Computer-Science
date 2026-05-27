@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churros da Angélica</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        {% include "menu.html" %}
+    </header>
+    <main id="inserir-pedido-page">
+        <h1>Novo Pedido</h1>
+        <h2>Adicione um novo pedido</h2>
+        <form action="/inserir-pedido" method="POST">
+            <div id="dados-cliente">
+                <h3>Dados do Cliente</h3>
+                <h4>Nome</h4>
+                <input name="nome" placeholder="Nome do cliente" type="text" required>
+                <h4>Whatsapp</h4>
+                <input name="whatsapp" placeholder="55900001111" type="text">
+                <h4>Observação</h4>
+                <input name="observacao" id="observacao" placeholder="Alguma observação sobre o pedido..." type="text">
+            </div>
+            <div id="dados-pedido">
+                <h3>Itens do Pedido</h3>
+                <div id="itens">
+                    <div id="itens-head">
+                        <h4>Produto</h4>
+                        <h4>Quantidade</h4>
+                        <h4>Preço Unit.</h4>
+                        <h4>Total</h4>
+                        <h4>Excluir</h4>
+                    </div>
+                    <div class="itens-row">
+                        <select name="produtos[]">
+                            <option value="tradicional">Churros Tradicional</option>
+                            <option value="recheado">Churros Recheado</option>
+                            <option value="mini">Mini Churros</option>
+                        </select>
+                        <div class="div-quantidade">
+                            <button onclick="somar(this, -1)" type="button">-</button>
+                            <input type="number" name="quantidades[]" value="1" min="1">
+                            <button onclick="somar(this, 1)" type="button">+</button>
+                        </div>
+                        <p class="preco_unidade">R$ 8,00</p>
+                        <p class="preco_total">R$ 8,00</p>
+                        <a onclick="removeRow(this.parentElement)"><img src="{{ url_for('static', filename='/assets/excluir.png') }}"></a>
+                    </div>
+                </div>
+                <div id="adicionar-total">
+                    <button type="button" id="btn_pedidos_adicionar">+ Adicionar produto</button>
+                    <div>
+                        <h3>
+                            Total do Pedido:
+                        </h3>
+                        <p>
+                            R$ 8,00
+                        </p>
+                    </div>
+                </div>
+                <div id="div-salvar-pedido">
+                    <button type="button" onclick="location.reload()">Limpar</button>
+                    <button type="submit">Salvar Pedido</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        {% include "footer.html" %}
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
