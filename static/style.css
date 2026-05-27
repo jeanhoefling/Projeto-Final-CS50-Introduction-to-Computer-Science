@@ -325,7 +325,12 @@ footer a:hover, footer p:hover {
 }
 
 #pedidos-page #itens-head h4:nth-child(4) {
-    width: 20%;
+    width: fit-content;
+}
+
+#pedidos-page #itens-head h4:nth-child(5) {
+    flex: 1;
+    text-align: right;
 }
 
 #pedidos-page .itens-row {
@@ -382,7 +387,22 @@ footer a:hover, footer p:hover {
 }
 
 #pedidos-page .itens-row p:nth-of-type(2) {
-    width: 20%;
+    width: fit-content;
+}
+
+#pedidos-page .itens-row a {
+    flex: 1;
+    text-align: right;
+}
+
+#pedidos-page .itens-row img {
+    width: 15%;
+    height: 3vh;
+}
+
+#pedidos-page .itens-row img:hover {
+    scale: 1.05;
+    cursor: pointer;
 }
 
 #pedidos-page #adicionar-total {

@@ -31,7 +31,7 @@
                         <h4>Quantidade</h4>
                         <h4>Preço Unit.</h4>
                         <h4>Total</h4>
-                        <h4>X</h4>
+                        <h4>Excluir</h4>
                     </div>
                     <div class="itens-row">
                         <select name="produtos[]">
@@ -46,7 +46,7 @@
                         </div>
                         <p class="preco_unidade">R$ 8,00</p>
                         <p class="preco_total">R$ 8,00</p>
-                        <p>X</p>
+                        <a onclick="removeRow(this.parentElement)"><img src="{{ url_for('static', filename='/assets/excluir.png') }}"></a>
                     </div>
                 </div>
                 <div id="adicionar-total">
@@ -56,7 +56,7 @@
                             Total do Pedido:
                         </h3>
                         <p>
-                            R$ 21,00
+                            R$ 8,00
                         </p>
                     </div>
                 </div>

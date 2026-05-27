@@ -12,7 +12,7 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.25
 });
 sections.forEach((section) => {
-    observer.observe(section);
+    observer.observe(section)
 });
 
 
@@ -24,7 +24,7 @@ function captarNovosSelects () {
             let tag_preco_unidade = row.querySelector('.preco_unidade')
             let preco_unidade = valores[select.value]
             tag_preco_unidade.textContent = `R$ ${preco_unidade.toFixed(2)}`
-            atualiza_total()
+            atualizaTotal()
         })
     })
 }
@@ -33,7 +33,7 @@ function captarNovosSelects () {
 captarNovosSelects()
 
 // Pedidos - Adicionar Produto
-let produtos = 1;
+let produtos = 1
 const pedidos_itens = document.querySelector('#itens');
 const btn_pedidos_adicionar = document.querySelector('#btn_pedidos_adicionar')
 btn_pedidos_adicionar.addEventListener ("click", () => {
@@ -52,12 +52,13 @@ btn_pedidos_adicionar.addEventListener ("click", () => {
             </div>
             <p class="preco_unidade">R$ 8,00</p>
             <p class="preco_total">R$ 8,00</p>
-            <p>X</p>
+            <a onclick="removeRow(this.parentElement)"><img src="/static/assets/excluir.png"></a>
             </div>
-    `);
-        produtos++;
+    `)
+        produtos++
     }
     captarNovosSelects()
+    atualizaTotal()
 });
 
 
@@ -66,16 +67,16 @@ function somar (btn, valor) {
     const div_btn = btn.parentElement;
     const input = div_btn.querySelector("input");
     
-    let actual_valor = parseInt(input.value) || 1;
+    let actual_valor = parseInt(input.value) || 1
     let new_valor = actual_valor + valor;
 
     if (new_valor < 1) {
-        new_valor = 1;
+        new_valor = 1
     }
 
-    input.value = new_valor;
+    input.value = new_valor
 
-    atualiza_total()
+    atualizaTotal()
 }
 
 
@@ -87,12 +88,21 @@ const valores = {
     mini: 5
 }
 
-function atualiza_total () {
-    let row = document.querySelectorAll('.itens-row').forEach(row => {
+function atualizaTotal () {
+    let valor_total_all_rows = 0
+    document.querySelectorAll('.itens-row').forEach(row => {
         let preco_unidade = valores[row.querySelector('select').value]
         let quantidade = parseInt(row.querySelector('input').value)
         let preco_total = preco_unidade * quantidade
+        valor_total_all_rows += preco_total
         let tag_preco_total = row.querySelector('.preco_total')
         tag_preco_total.textContent = `R$ ${preco_total.toFixed(2)}`
     })
+    document.querySelector('#adicionar-total p').textContent = `R$ ${valor_total_all_rows.toFixed(2)}`
+}
+
+function removeRow (row) {
+    row.remove()
+    produtos--
+    atualizaTotal()
 }
