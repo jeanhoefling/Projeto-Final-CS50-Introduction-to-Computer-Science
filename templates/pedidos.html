@@ -11,6 +11,35 @@
         {% include "menu.html" %}
     </header>
     <main id="pedidos-page">
+        <div>
+            <div>
+                <h1>Pedidos em Produção</h1>
+                <h2>Acompanhe e gerencie a fila de produção</h2>
+            </div>
+            <a href="inserir-pedido">+ Inserir Pedido</a>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div>
+                    <h3>#000ID</h3>
+                    <p>TEMPO</p>
+                </div>
+                <h4>NOME</h4>
+                <ul>
+                    <li>XX ITEM</li>
+                    <li>Total: R$ XX,00</li>
+                </ul>
+                <div>
+                    <a><img src="{{ url_for('static', filename='/assets/whatsapp') }}"></a>
+                    <div>
+                        <p>NUMERO</p>
+                        <p>Falar com o Cliente (Whatsapp)</p>
+                    </div>
+                </div>
+                <button>Marcar como Concluído</button>
+                <button>Cancelar Pedido</button>
+            </div>
+        </div>
     </main>
     <footer>
         {% include "footer.html" %}

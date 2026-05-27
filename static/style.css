@@ -257,7 +257,7 @@ footer a:hover, footer p:hover {
     width: 2vw;
 }
 
-/* PEDIDOS */
+/* INSERIR PEDIDOS */
 
 #inserir-pedido-page {
     padding: 2vh 2% 2vh 2%;
@@ -460,6 +460,27 @@ input[type="number"]::-webkit-inner-spin-button {
     appearance: textfield;
 }
 
+/* PEDIDOS */
+
+#pedidos-page div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#pedidos-page div div {
+    display: flex;
+    flex-direction: column;
+}
+
+#pedidos-page div div div {
+    display: flex;
+    flex-direction: row;
+}
+
+#pedidos-page div div div div {
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* ANIMAÇÕES */
