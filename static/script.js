@@ -16,8 +16,23 @@ sections.forEach((section) => {
 });
 
 
-// Pedidos - Adicionar Produto
+// Pedidos - Função para captar as novas rows inseridas pelo botão
+function captarNovosSelects () {
+    document.querySelectorAll('.itens-row select').forEach(select => {
+        select.addEventListener("change", () => {
+            let row = select.parentElement
+            let tag_preco_unidade = row.querySelector('.preco_unidade')
+            let preco_unidade = valores[select.value]
+            tag_preco_unidade.textContent = `R$ ${preco_unidade.toFixed(2)}`
+            atualiza_total()
+        })
+    })
+}
 
+// Essa chamada é para pegar o elemento que já está por padrão na página
+captarNovosSelects()
+
+// Pedidos - Adicionar Produto
 let produtos = 1;
 const pedidos_itens = document.querySelector('#itens');
 const btn_pedidos_adicionar = document.querySelector('#btn_pedidos_adicionar')
@@ -42,6 +57,7 @@ btn_pedidos_adicionar.addEventListener ("click", () => {
     `);
         produtos++;
     }
+    captarNovosSelects()
 });
 
 
@@ -70,15 +86,6 @@ const valores = {
     recheado: 10,
     mini: 5
 }
-document.querySelectorAll('.itens-row select').forEach(select => {
-    select.addEventListener("change", () => {
-        let row = select.parentElement
-        let tag_preco_unidade = row.querySelector('.preco_unidade')
-        let preco_unidade = valores[select.value]
-        tag_preco_unidade.textContent = `R$ ${preco_unidade.toFixed(2)}`
-        atualiza_total()
-    })
-})
 
 function atualiza_total () {
     let row = document.querySelectorAll('.itens-row').forEach(row => {

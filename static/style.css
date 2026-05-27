@@ -423,8 +423,9 @@ footer a:hover, footer p:hover {
     color: white;
 }
 
-#pedidos-page #dados-pedido button {
+#pedidos-page #dados-pedido button:hover {
     cursor: pointer;
+    scale: 1.05;
 }  
 
 #pedidos-page input[type="number"]::-webkit-outer-spin-button, #pedidos-page 
