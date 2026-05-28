@@ -107,7 +107,7 @@ function removeRow (row) {
     atualizaTotal()
 }
 
-function createCards (num) {
+function createCards (num, items) {
     let rows
     if ((num % 4) == 0) {
         rows = num / 4
@@ -125,30 +125,40 @@ function createCards (num) {
             `)
     }
 
-
-    const tag_rows = document.querySelectorAll('.cards-row').forEach((tag_row) => {
+    let cont = 0
+    const tag_rows = document.querySelectorAll('.cards-row')
+    tag_rows.forEach((tag_row) => {
         for (let i = 0; i < 4; i++) {
-            if (num == 0) return
+            if (cont == num) return
             tag_row.insertAdjacentHTML ('beforeend', `
                     <div class="card">
                     <div>
-                    <h3>#000ID</h3>
+                    <h3>ID: #${items[cont][0]}</h3>
                     <p>TEMPO</p>
                     </div>
-                    <h4>NOME</h4>
+                    <h4>${items[cont][1]}</h4>
                     <ul>
-                    <li>XX ITEM</li>
-                    <li>Total: R$ XX,00</li>
+                    <li>Tradicional: ${items[cont][3]}</li>
+                    <li>Recheado: ${items[cont][4]}</li>
+                    <li>Mini: ${items[cont][5]}</li>
+                    <li>Total: R$ ${items[cont][6]},00</li>
                     </ul>
                     <div class="div-whatsapp">
-                    <a><img src="/static/assets/whatsapp.png"></a>
-                    <p>NUMERO</p>
+                    <a href="https://wa.me/${items[cont][2]}" target="blank"><img src="/static/assets/whatsapp.png"></a>
+                    <p>${items[cont][2]}</p>
                     </div>
+                    <form action="/pedidos" method="PATCH">
                     <button>Marcar como Concluído</button>
+                    </form>
+                    <form action="/pedidos" method="DELETE">
                     <button>Cancelar Pedido</button>
+                    </form>
                     </div>
                 `)
-            num--
+            cont++
         }
     })
+    const ultima_row = tag_rows[tag_rows.length - 1]
+    ultima_row.id = "ultima-card-row"
+
 }

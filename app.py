@@ -30,14 +30,18 @@ def index():
 def vendas():
     return render_template("vendas.html")
 
-@app.route("/pedidos", methods=["GET", "UPDATE"])
+@app.route("/pedidos", methods=["GET", "PATCH", "DELETE"])
 def pedidos():
-    if request.method == "UPDATE":
+    if request.method == "PATCH":
+        return render_template("pedidos.html")
+    elif request.method == "PATCH":
         return render_template("pedidos.html")
     else:
         db.execute('SELECT COUNT(*) as num_pedidos FROM pedidos WHERE status = (?)', ("Em andamento",))
         num_pedidos = int(db.fetchone()[0])
-        return render_template("pedidos.html", num_pedidos=num_pedidos)
+        db.execute('SELECT id, nome, whatsapp, tradicional, recheado, mini, valor_total FROM pedidos')
+        items = db.fetchall()
+        return render_template("pedidos.html", num_pedidos=num_pedidos, items=items)
     
 @app.route("/inserir-pedido", methods=["GET", "POST"])
 def inserirPedido():

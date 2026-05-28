@@ -488,6 +488,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #pedidos-page .cards-row {
+    justify-content: left;
+    gap: 7%;
     margin-top: 3vh;
 }
 
@@ -538,16 +540,18 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 6vh;
 }
 
-#pedidos-page .card button:nth-of-type(1) {
+#pedidos-page .card form:nth-of-type(1) button {
     margin-top: 1vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
     background-color: rgb(253, 115, 129);
     color: white;
     border-radius: 3px;
+    width: 100%;
 }
 
-#pedidos-page .card button:nth-of-type(2) {
+#pedidos-page .card form:nth-of-type(2) button {
+    width: 100%;
     margin-top: 0.1vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
