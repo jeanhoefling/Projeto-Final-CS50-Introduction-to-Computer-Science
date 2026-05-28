@@ -147,10 +147,12 @@ function createCards (num, items) {
                     <a href="https://wa.me/${items[cont][2]}" target="blank"><img src="/static/assets/whatsapp.png"></a>
                     <p>${items[cont][2]}</p>
                     </div>
-                    <form action="/pedidos" method="PATCH">
+                    <form action="/concluir-pedido" method="POST">
+                    <input type="hidden" name="id_pedido" value="${items[cont][0]}">
                     <button>Marcar como Concluído</button>
                     </form>
-                    <form action="/pedidos" method="DELETE">
+                    <form action="/cancelar-pedido" method="POST">
+                    <input type="hidden" name="id_pedido" value="${items[cont][0]}">
                     <button>Cancelar Pedido</button>
                     </form>
                     </div>
