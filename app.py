@@ -30,16 +30,33 @@ def index():
 
 @app.route("/vendas")
 def vendas():
-    db.execute('SELECT nome, tradicional, recheado, mini, valor_total, data_pedido FROM pedidos WHERE status = (?)', ("Concluído",))
+    data_inicio = request.args.get("data_inicio")
+    data_fim = request.args.get("data_fim")
+
+    params = ["Concluído"]
+    query1 = 'SELECT nome, tradicional, recheado, mini, valor_total, data_pedido FROM pedidos WHERE status = ?'
+    query2 = 'SELECT SUM(tradicional), SUM(recheado), SUM(mini) FROM pedidos WHERE status = ?'
+    query3 = 'SELECT SUM(valor_total) AS soma_valor, COUNT(*) AS num_pedidos, AVG(valor_total) AS ticket, SUM(tradicional + recheado + mini) AS num_produtos FROM pedidos WHERE status = ?'
+
+    if data_inicio:
+        params.append(data_inicio)
+        query1 += ' AND date(data_pedido) >= ?'
+        query2 += ' AND date(data_pedido) >= ?'
+        query3 += ' AND date(data_pedido) >= ?'
+
+    if data_fim:
+        params.append(data_fim)
+        query1 += ' AND date(data_pedido) <= ?'
+        query2 += ' AND date(data_pedido) <= ?'
+        query3 += ' AND date(data_pedido) <= ?'
+
+    db.execute(query1, params)
     ultimas_vendas = db.fetchall()
-    db.execute('SELECT SUM(tradicional), SUM(recheado), SUM(mini) FROM pedidos WHERE status = (?)', ("Concluído",))
+    db.execute(query2, params)
     unidades = db.fetchall()
-    db.execute('''SELECT SUM(valor_total) AS soma_valor, 
-               COUNT(*) AS num_pedidos, 
-               AVG(valor_total) AS ticket,
-               SUM(tradicional + recheado + mini) AS num_produtos FROM pedidos WHERE status = (?)''', ("Concluído",))
+    db.execute(query3, params)
     data_cards = db.fetchall()
-    return render_template("vendas.html", ultimas_vendas=ultimas_vendas, unidades=unidades, data_cards=data_cards)
+    return render_template("vendas.html", ultimas_vendas=ultimas_vendas, unidades=unidades, data_cards=data_cards, data_inicio=data_inicio, data_fim=data_fim)
 
 @app.route("/pedidos", methods=["GET"])
 def pedidos():

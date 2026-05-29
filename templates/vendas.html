@@ -16,7 +16,13 @@
                 <h1>Relatório de Vendas</h1>
                 <h2>Acompanhe suas vendas e desempenho</h2>
             </div>
-            <button id="btn-filtro">Filtrar</button>
+            <form action="/vendas" method="GET">
+                <label for="data_inicio">Data inicial</label>
+                <input type="date" name="data_inicio" id="data_inicio" value="{{ data_inicio }}">
+                <label for="data_fim">Data final</label>
+                <input type="date" name="data_fim" id="data_fim" value="{{ data_fim }}">
+                <button id="btn-filtro">Filtrar</button>
+            </form>
         </div>
         <div id="cards">
             <div class="card">

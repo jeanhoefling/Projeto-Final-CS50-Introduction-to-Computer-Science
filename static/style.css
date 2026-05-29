@@ -580,7 +580,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #vendas-page #btn-filtro {
     background-color: rgb(253, 115, 129);
-    padding: 1vh 2% 1vh 2%;
+    padding: 1vh 5% 1vh 5%;
     border: 2px solid rgb(253, 115, 129);
     border-radius: 3px;
     color: white;
@@ -661,6 +661,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #vendas-page #ultimas-vendas {
+    margin-top: 3vh;
     padding: 1vh 1% 1vh 1%;
     background-color: white;
     border: 3px solid #cccccc;
@@ -726,6 +727,17 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #vendas-page #ultimas-vendas .row p:nth-of-type(4) {
     width: 15%;
+}
+
+#vendas-page #header form {
+    display: flex;
+    margin-left: auto;
+    gap: 2%;
+    height: 50%;
+}
+
+#vendas-page #header form input {
+    margin-right: 2%;
 }
 
 /* ANIMAÇÕES */
